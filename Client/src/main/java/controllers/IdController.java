@@ -46,19 +46,15 @@ public class IdController {
         // create json from id
         StringWriter writer = new StringWriter();
         ObjectMapper mapper = new ObjectMapper();
-        try{
-            // call server, get json result Or error
-            mapper.writeValue(writer, 1);
-            String json = writer.toString();
-            System.out.println("this is your string: " + json);
-
-        }catch(IOException e){
-            e.getMessage();
-        }
+        mapper.writeValue(writer, 1);
+        String json = writer.toString();
+        System.out.println("this is your string: " + json);
+        // call server, get json result Or error
+        String results = sc.postId(json);
 
         // result json to Id obj
 
-        return null;
+        return mapper.readValue(results, Id.class);
     }
 
     public Id putId(Id id) {

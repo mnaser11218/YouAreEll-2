@@ -80,7 +80,7 @@ public class ServerController {
     public String getIds() {
         return sendRequest("/ids", "GET", "");
     }
-    public String postId(){return sendRequest("/ids", "POST", "");}
+    public String postId(String body ){return sendRequest("/ids", "POST", body);}
 
     public static void main(String[] args) {
         ServerController me = ServerController.shared();
