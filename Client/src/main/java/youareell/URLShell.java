@@ -27,7 +27,7 @@ public class URLShell {
     public void run() throws IOException {
         YouAreEll urll = new YouAreEll(new TransactionController(new MessageController(ServerController.shared()), 
         new IdController(ServerController.shared())));
-        
+
         String commandLine;
         BufferedReader console = new BufferedReader
                 (new InputStreamReader(System.in));
@@ -87,6 +87,12 @@ public class URLShell {
                     continue;
                 }
                 // you need to add a bunch more.
+                if (list.get(0).contains("id")) {
+                    String results = urll.postId(list.get(1), list.get(2), list.get(3));
+                    URLShell.prettyPrint(results);
+                    continue;
+                }
+
 
                 //!! command returns the last command in history
                 if (list.get(list.size() - 1).equals("!!")) {

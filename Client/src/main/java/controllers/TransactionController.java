@@ -3,6 +3,7 @@ package controllers;
 import models.Id;
 import models.Message;
 
+import java.io.IOException;
 import java.util.List;
 
 public class TransactionController {
@@ -30,7 +31,7 @@ public class TransactionController {
         return null;
     }
 
-    public String postId(String idtoRegister,String name, String githubName) {
+    public String postId(String idtoRegister,String name, String githubName) throws IOException {
          Id tid = new Id(idtoRegister, name, githubName);
          tid = idCtrl.postId(tid);
          return "Id registered.";

@@ -1,5 +1,6 @@
 package youareell;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
@@ -32,7 +33,7 @@ public class YouAreEll {
         return sb.toString();
     }
 
-    public String postId(String idtoRegister,String name, String githubName){
+    public String postId(String idtoRegister,String name, String githubName) throws IOException {
          return tt.postId(idtoRegister, name, githubName);
     }
 

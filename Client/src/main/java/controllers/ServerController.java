@@ -88,7 +88,7 @@ public class ServerController {
         System.out.println(me.getIds());
         // System.out.println("Messages ************");
         // System.out.println(me.getMessages());
-        System.out.println(me.postId());
+        //System.out.println(me.postId());
 
     }
 
