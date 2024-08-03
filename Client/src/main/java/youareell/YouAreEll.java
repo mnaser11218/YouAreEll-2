@@ -20,6 +20,7 @@ public class YouAreEll {
                 new MessageController(ServerController.shared()), 
                 new IdController(ServerController.shared())
         ));
+        System.out.println(urlhandler.get_ids());
     }
 
     public String get_ids() {
@@ -31,6 +32,10 @@ public class YouAreEll {
         return sb.toString();
     }
 
+    public String postId(String idtoRegister,String name, String githubName){
+         return tt.postId(idtoRegister, name, githubName);
+    }
+
     public String get_messages() {
         List<models.Message> latestMessages = tt.getMessages();
         StringBuilder sb = new StringBuilder();
@@ -39,6 +44,8 @@ public class YouAreEll {
         }
         return sb.toString();
     }
+
+
 
 
 }

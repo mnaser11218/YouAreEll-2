@@ -57,10 +57,12 @@ public class URLShell {
             for (int i = 0; i < commands.length; i++) {
                 //System.out.println(commands[i]); //***check to see if parsing/split worked***
                 list.add(commands[i]);
+                System.out.println(list);
 
             }
             //System.out.print(list); //***check to see if list was added correctly***
             history.add(commandLine);
+            System.out.println("history" + history);
             try {
                 //display history of shell with index
                 if (list.get(list.size() - 1).equals("history")) {

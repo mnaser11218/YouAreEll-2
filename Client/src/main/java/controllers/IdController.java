@@ -1,5 +1,7 @@
 package controllers;
 
+import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,9 +42,20 @@ public class IdController {
         return null;
     }
 
-    public Id postId(Id id) {
+    public Id postId(Id id) throws IOException {
         // create json from id
-        // call server, get json result Or error
+        StringWriter writer = new StringWriter();
+        ObjectMapper mapper = new ObjectMapper();
+        try{
+            // call server, get json result Or error
+            mapper.writeValue(writer, 1);
+            String json = writer.toString();
+            System.out.println("this is your string: " + json);
+
+        }catch(IOException e){
+            e.getMessage();
+        }
+
         // result json to Id obj
 
         return null;

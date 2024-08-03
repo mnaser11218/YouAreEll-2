@@ -30,11 +30,11 @@ public class TransactionController {
         return null;
     }
 
-    public String postId(String idtoRegister, String githubName) {
-        // Id tid = new Id(idtoRegister, githubName);
-        // tid = idCtrl.postId(tid);
-        // return ("Id registered.");
-        return null;
+    public String postId(String idtoRegister,String name, String githubName) {
+         Id tid = new Id(idtoRegister, name, githubName);
+         tid = idCtrl.postId(tid);
+         return "Id registered.";
+       // return null;
     }
 
     public List<Message> getMessages() {
