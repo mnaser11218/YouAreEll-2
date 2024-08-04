@@ -102,7 +102,7 @@ public class URLShell {
 
                     String message = "";
                     for(int i=2; i< indexOfUserTo-1; i++){
-                        message += list.get(i);
+                        message += list.get(i) + " ";
                     }
                    // System.out.println(message);
 //
