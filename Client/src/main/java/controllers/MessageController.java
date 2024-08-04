@@ -98,4 +98,14 @@ public class MessageController {
 
         return results;
     }
+
+    public String sendMessageToUser(Message m) throws IOException {
+        StringWriter writer = new StringWriter();
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(writer, m);
+        String jsonBody = writer.toString();
+        String results = sc.sendMessageToUser(jsonBody, m.getFromid(), m.getToid());
+
+        return results;
+    }
 }

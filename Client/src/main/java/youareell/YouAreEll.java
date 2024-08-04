@@ -66,4 +66,9 @@ public class YouAreEll {
 
         return m;
     }
+
+    public String sendMessageToUser(String message, String fromId, String toId) throws IOException {
+        String m = tt.sendMessageToUser(message, fromId, toId);
+        return m;
+    }
 }

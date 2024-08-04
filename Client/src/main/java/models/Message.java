@@ -40,6 +40,7 @@ public class Message implements Comparable<Message> {
         this.message = message;
         this.fromid = fromId;
         this.toid = toId;
+        this.timestamp = OffsetDateTime.now().toString();
     }
 
     public Message (String message, String fromId) {

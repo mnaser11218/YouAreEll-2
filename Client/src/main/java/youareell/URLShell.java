@@ -95,7 +95,21 @@ public class URLShell {
                     URLShell.prettyPrint(results);
                     continue;
                 }
+                if (list.get(0).contains("send") && list.contains("to") && list.size() >3) {
+                    int indexOfUserTo = list.indexOf("to")+1;
+                  //  System.out.println("index of " + list.get(indexOfUserTo));
 
+
+                    String message = "";
+                    for(int i=2; i< indexOfUserTo-1; i++){
+                        message += list.get(i);
+                    }
+                   // System.out.println(message);
+//
+                    String results = urll.sendMessageToUser(message, list.get(1), list.get(indexOfUserTo));
+                   URLShell.prettyPrint(results);
+                    continue;
+                }
                 if (list.get(0).contains("send") && list.size() ==3) {
                     String message = "";
                     for(int i=2; i< list.size(); i++){

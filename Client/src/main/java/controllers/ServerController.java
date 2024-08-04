@@ -87,10 +87,14 @@ public class ServerController {
     public String sendMessage(String jsonBody, String fromid) {
         return sendRequest("/ids/" +fromid+ "/messages", "POST", jsonBody);
     }
+    public String sendMessageToUser(String jsonBody, String fromid, String toid) {
+        return sendRequest("/ids/" +fromid+ "/messages", "POST", jsonBody);
+    }
     public static void main(String[] args) {
         ServerController me = ServerController.shared();
         System.out.println("Ids ************");
         System.out.println(me.getIds());
+        //System.out.println(me.sendMessageToUser());
         // System.out.println("Messages ************");
         // System.out.println(me.getMessages());
         //System.out.println(me.postId());

@@ -61,4 +61,12 @@ public class TransactionController {
 
         return t;
     }
+
+    public String sendMessageToUser(String message, String fromId, String toId) throws IOException {
+        Date date = new Date();
+        Message m = new Message(message, fromId, toId);
+        String t = msgCtrl.sendMessageToUser(m);
+
+        return t;
+    }
 }
