@@ -82,7 +82,11 @@ public class ServerController {
     }
     public String postId(String body ){return sendRequest("/ids", "POST", body);}
     public String putId(String body ){return sendRequest("/ids", "PUT", body);}
-
+    public String getMessagesOfUserName(String username) { return sendRequest("/ids/" +username+ "/messages", "GET", "");
+    }
+    public String sendMessage(String jsonBody, String fromid) {
+        return sendRequest("/ids/" +fromid+ "/messages", "POST", jsonBody);
+    }
     public static void main(String[] args) {
         ServerController me = ServerController.shared();
         System.out.println("Ids ************");
@@ -92,6 +96,8 @@ public class ServerController {
         //System.out.println(me.postId());
 
     }
+
+
 
 }
 

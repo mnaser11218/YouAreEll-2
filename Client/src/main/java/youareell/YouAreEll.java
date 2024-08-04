@@ -6,6 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 import controllers.*;
+import models.Message;
 
 public class YouAreEll {
     private TransactionController tt;
@@ -51,6 +52,18 @@ public class YouAreEll {
     }
 
 
+    public String get_messagesOfUser(String userName) {
+        List<models.Message> latestMessages = tt.getMessagesOfUser(userName);
+        StringBuilder sb = new StringBuilder();
+        for (models.Message msg : latestMessages) {
+            sb.append(msg.toString()+"\n");
+        }
+        return sb.toString();
+    }
 
+    public String sendMessage(String userName, String message) throws IOException {
+     String m = tt.sendMessage(userName, message);
 
+        return m;
+    }
 }

@@ -81,13 +81,28 @@ public class URLShell {
                 }
 
                 // messages
-                if (list.get(0).contains("messages")) {
+
+
+                if (list.get(0).contains("messages") && list.size() ==1) {
                     String results = urll.get_messages();
                     URLShell.prettyPrint(results);
                     continue;
                 }
+                // get last 20 messages sent to specific user
                 // you need to add a bunch more.
+                if (list.get(0).contains("messages") && list.size() ==2) {
+                    String results = urll.get_messagesOfUser(list.get(1));
+                    URLShell.prettyPrint(results);
+                    continue;
+                }
 
+                if (list.get(0).contains("send") && list.size() ==3) {
+                    String results = urll.sendMessage(list.get(1), list.get(2));
+                    System.out.println("1 " + list.get(1));
+                    System.out.println("2" + list.get(2));
+                    URLShell.prettyPrint(results);
+                    continue;
+                }
                 // method for post new id to server
                 if (list.get(0).contains("id")) {
                     String results = urll.postId(list.get(1), list.get(2), list.get(3));

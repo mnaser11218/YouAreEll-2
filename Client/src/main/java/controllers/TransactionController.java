@@ -4,6 +4,7 @@ import models.Id;
 import models.Message;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 public class TransactionController {
@@ -47,5 +48,17 @@ public class TransactionController {
 
     public List<Message> getMessages() {
         return msgCtrl.getMessages();
+    }
+
+    public List<Message> getMessagesOfUser(String userName) {
+        return msgCtrl.getMessagesOfUsername(userName);
+    }
+
+    public String sendMessage(String userName, String message) throws IOException {
+        Date date = new Date();
+        Message m = new Message(message, userName);
+        String t = msgCtrl.sendMessage(m);
+
+        return t;
     }
 }
