@@ -97,7 +97,12 @@ public class URLShell {
                 }
 
                 if (list.get(0).contains("send") && list.size() ==3) {
-                    String results = urll.sendMessage(list.get(1), list.get(2));
+                    String message = "";
+                    for(int i=2; i< list.size(); i++){
+                        message += list.get(i);
+                    }
+
+                    String results = urll.sendMessage(list.get(1), message);
                     System.out.println("1 " + list.get(1));
                     System.out.println("2" + list.get(2));
                     URLShell.prettyPrint(results);
