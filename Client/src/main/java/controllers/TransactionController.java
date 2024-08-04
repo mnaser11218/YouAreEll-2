@@ -38,6 +38,13 @@ public class TransactionController {
        // return null;
     }
 
+    public String putId(String idtoRegister,String name, String githubName) throws IOException {
+        Id tid = new Id(idtoRegister, name, githubName);
+        tid = idCtrl.putId(tid);
+        return "User updated succesfully.";
+        // return null;
+    }
+
     public List<Message> getMessages() {
         return msgCtrl.getMessages();
     }

@@ -87,8 +87,16 @@ public class URLShell {
                     continue;
                 }
                 // you need to add a bunch more.
+
+                // method for post new id to server
                 if (list.get(0).contains("id")) {
                     String results = urll.postId(list.get(1), list.get(2), list.get(3));
+                    URLShell.prettyPrint(results);
+                    continue;
+                }
+                // method for put, to updated user
+                if (list.get(0).contains("put")) {
+                    String results = urll.putId(list.get(1), list.get(2), list.get(3));
                     URLShell.prettyPrint(results);
                     continue;
                 }

@@ -57,8 +57,18 @@ public class IdController {
         return mapper.readValue(results, Id.class);
     }
 
-    public Id putId(Id id) {
-        return null;
+    public Id putId(Id id) throws IOException {
+        StringWriter writer = new StringWriter();
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(writer, id);
+        String json = writer.toString();
+        System.out.println("this is your string: " + json);
+        // call server, get json result Or error
+        String results = sc.putId(json);
+
+        // result json to Id obj
+
+        return mapper.readValue(results, Id.class);
     }
  
 }

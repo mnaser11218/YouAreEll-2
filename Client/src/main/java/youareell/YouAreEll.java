@@ -37,6 +37,10 @@ public class YouAreEll {
          return tt.postId(idtoRegister, name, githubName);
     }
 
+    public String putId(String idtoRegister,String name, String githubName) throws IOException {
+        return tt.putId(idtoRegister, name, githubName);
+    }
+
     public String get_messages() {
         List<models.Message> latestMessages = tt.getMessages();
         StringBuilder sb = new StringBuilder();
